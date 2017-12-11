@@ -120,6 +120,12 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi6210sft
 
+# RIL
+TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+BOARD_RIL_CLASS := ../../../device/huawei/alice/ril
+PROTOBUF_SUPPORTED := true
+TARGET_RIL_VARIANT := proprietary
+
 # Enable WEBGL
 ENABLE_WEBGL := true
 
