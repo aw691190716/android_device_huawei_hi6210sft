@@ -1,4 +1,5 @@
-# Copyright (C) 2017 The LineageOS Project
+#
+# Copyright 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,9 +12,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-$(call inherit-product, $(LOCAL_PATH)/pre-base.mk)
-$(call inherit-product, $(LOCAL_PATH)/full_alice.mk)
+# This contains the module build definitions for the hardware-specific
+# components for this device.
+#
+# As much as possible, those components should be built unconditionally,
+# with device-specific names to avoid collisions, to avoid device-specific
+# bitrot and build breakages. Building a component unconditionally does
+# *not* include it on all devices, so it is safe even with hardware-specific
+# components.
+
+$(call inherit-product, device/huawei/alice/full_alice.mk)
+$(call inherit-product, device/huawei/alice/pre-base.mk)
+
+PRODUCT_NAME := aosp_alice
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/aosp/common.mk)
@@ -21,8 +34,6 @@ $(call inherit-product, vendor/aosp/common.mk)
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
-
-PRODUCT_NAME := aosp_alice
 
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
