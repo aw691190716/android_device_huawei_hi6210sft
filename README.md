@@ -1,2 +1,2 @@
-# android_oreo_device_hi6210sft
-AOSPExtended Oreo Proprietary soruce code for hi6210sft SoC
+# android_device_huawei_hi6210sft
+CosmicOS Nougat Proprietary soruce code for hi6210sft SoC
