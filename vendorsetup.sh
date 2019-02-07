@@ -1,1 +1,1 @@
-add_lunch_combo dot_alice-userdebug
+add_lunch_combo cos_alice-userdebug

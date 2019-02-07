@@ -14,17 +14,22 @@
 
 $(call inherit-product, device/huawei/alice/full_alice.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/dot/config/common_full_phone.mk)
+# Inherit some common CosmicOS stuff.
+$(call inherit-product, vendor/cos/common.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# It's Nightly
+VIPER_BUILD_TYPE=NIGHTLY
+
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
-PRODUCT_NAME := dot_alice
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="XTutorials"
+
+PRODUCT_NAME := cos_alice
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys" \
